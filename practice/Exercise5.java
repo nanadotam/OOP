@@ -2,7 +2,7 @@ package practice;
 
 // Import the Scanner Class from the java.util package
 // Scanner is used in Java to get input from the user
-import java.util.Scanner; 
+=
 
 // Declares the start of a new class called 'Exercise5'
 public class Exercise5 {
@@ -23,6 +23,9 @@ public class Exercise5 {
 
         // Calculates the poduct of the two numbers
         System.out.println(num1 + " x " + num2 + " = " + (num1 * num2));
+
+        // Close the scanner to prevent a resource leak
+        scanner.close();
 
     }
     
