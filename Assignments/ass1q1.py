@@ -4,6 +4,8 @@
 3. Calculate the user's gross income
 '''
 
+# foolish line
+
 def calculate_tax(gross_income):
     # Function to calculate income tax and net salary using the tax rates published by the GRA
     chargable_income = [402, 110, 130, 3000, 16395, 29963, 50000]    #in GHS
