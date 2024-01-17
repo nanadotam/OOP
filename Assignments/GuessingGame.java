@@ -29,15 +29,27 @@ public class GuessingGame {
 
             int guess = scanner.nextInt();
 
-            //if (lowerBound)
-
+            if (lowerBound <= guess && guess <= upperBound) {
+                attempts++;
+                if (guess == SecretNumber) {
+                    System.out.println("You guessed correctly after " + attempts + "tries! Congratulations.")
+                    break;
+                }
+                else if (guess < SecretNumber) {
+                    System.out.println("Good try, but that's too low. Try again.");}
+                }
+                else if (guess > SecretNumber){
+                    System.out.println("Good try, but that's too high. Try again.")
+                }
+            else {
+                System.out.println("Invalid input. Guess a number within the specified range.")
+            }
+            }
+    
         }
+        scanner.close();
     }
 
 
-
-
-
-}
 
 

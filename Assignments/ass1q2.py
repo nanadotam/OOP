@@ -16,12 +16,6 @@ def guessing_game():
     while True:
         guess = input("I'm thinking of a number between 1 and 100. Can you guess it?\nGuess: ")
 
-        try:
-            guess = int(guess)
-        except ValueError:
-            print("Invalid input. Guess a number within the specified range.")
-            continue
-
         if lower_bound <= guess and guess <= upper_bound:
             attempts += 1
             if guess == secret_number:
