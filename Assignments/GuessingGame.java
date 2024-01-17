@@ -24,32 +24,31 @@ public class GuessingGame {
         // Creating a Secret Number variable using the random integer
         int SecretNumber = random.nextInt(upperBound - lowerBound + 1) + lowerBound;
 
+        System.out.print("I'm thinking of a number between 1 and 100. Can you guess it?\nGuess: ");
+
         while (true) {
-            System.out.print("I'm thinking of a number between 1 and 100. Can you guess it?\nGuess: ");
-
+            
             int guess = scanner.nextInt();
-
+            
             if (lowerBound <= guess && guess <= upperBound) {
+                // Incrementing the Attempts Counter
                 attempts++;
                 if (guess == SecretNumber) {
-                    System.out.println("You guessed correctly after " + attempts + "tries! Congratulations.")
+                    System.out.println("You guessed correctly after " + attempts + " tries! Congratulations.");
                     break;
-                }
-                else if (guess < SecretNumber) {
-                    System.out.println("Good try, but that's too low. Try again.");}
-                }
-                else if (guess > SecretNumber){
-                    System.out.println("Good try, but that's too high. Try again.")
+                } else if (guess < SecretNumber) {
+                    System.out.println("Good try, but that's too low. Try again.");
+                } else if (guess > SecretNumber){
+                    System.out.println("Good try, but that's too high. Try again.");
                 }
             else {
-                System.out.println("Invalid input. Guess a number within the specified range.")
+                System.out.println("Invalid input. Guess a number within the specified range.");
             }
             }
-    
         }
-        scanner.close();
+    scanner.close();
     }
-
+}
 
 
 

@@ -14,7 +14,7 @@ def guessing_game():
     attempts = 0
 
     while True:
-        guess = input("I'm thinking of a number between 1 and 100. Can you guess it?\nGuess: ")
+        guess = int(input("I'm thinking of a number between 1 and 100. Can you guess it?\nGuess: "))
 
         if lower_bound <= guess and guess <= upper_bound:
             attempts += 1
