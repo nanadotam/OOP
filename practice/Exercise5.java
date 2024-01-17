@@ -2,7 +2,6 @@ package practice;
 
 // Import the Scanner Class from the java.util package
 // Scanner is used in Java to get input from the user
-=
 
 // Declares the start of a new class called 'Exercise5'
 public class Exercise5 {
