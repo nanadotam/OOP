@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class IncomeTaxCalculator {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
 
         // Get gross monthly salary from user
         System.out.print("Enter your gross monthly salary in GHS: ");
@@ -23,9 +23,8 @@ public class IncomeTaxCalculator {
         System.out.printf("Income Tax: GHS %.2f%n", tax);
         System.out.printf("Net Monthly Salary: GHS %.2f%n", netSalary);
 
-        scanner.close();
+        }
     }
-
 
     public static double[] taxCalculator (double grossIncome) {
         double remainingIncome = grossIncome;
@@ -70,6 +69,7 @@ public class IncomeTaxCalculator {
                             taxPayable += 16395 * 0.25;
                             remainingIncome -= 16395;
                         }
+
                             // Calculate tax for the sixth bracket
                             if (remainingIncome <= 29963) {
                                 taxPayable += remainingIncome * 0.30;
@@ -85,6 +85,7 @@ public class IncomeTaxCalculator {
                                     taxPayable += 50000 * 0.35;
                                     remainingIncome -= 50000;
                                 }
+
         // Calculate net salary after tax deductions
         double netSalary = grossIncome - taxPayable;
 
