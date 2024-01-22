@@ -19,9 +19,9 @@ def guessing_game(seed: int) -> None:
     secret_number = random.randint(lower_bound, upper_bound)
 
     attempts = 0
-
+    print("I'm thinking of a number between 1 and 100. Can you guess it?")
     while True:
-        guess = int(input("I'm thinking of a number between 1 and 100. Can you guess it?\nGuess: "))
+        guess = int(input("Guess: "))
 
         if lower_bound <= guess and guess <= upper_bound:
             # Incrementing the Attempts Counter
