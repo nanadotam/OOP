@@ -35,12 +35,16 @@ public class GuessingGame {
             if (lowerBound <= guess && guess <= upperBound) {
                 // Incrementing the Attempts Counter
                 attempts++;
+                // Getting the user's guess
                 if (guess == secretNumber) {
+                    // Displaying a congratulatory message if the guess is correct
                     System.out.println("You guessed correctly after " + attempts + " tries! Congratulations.");
                     break;
                 } else if (guess < secretNumber) {
+                    // Providing feedback for a low guess
                     System.out.println("Good try, but that's too low. Try again.");
                 } else if (guess > secretNumber) {
+                    // Providing feedback for a high guess
                     System.out.println("Good try, but that's too high. Try again.");
                 }
             } else {
