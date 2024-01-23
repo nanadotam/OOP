@@ -41,4 +41,4 @@ def guessing_game(seed: int) -> None:
             print("Invalid input. Guess a number within the specified range.")
 
 
-guessing_game(seed=32)
+guessing_game(seed=45)
