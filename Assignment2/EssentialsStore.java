@@ -9,7 +9,10 @@ import java.util.Scanner;
 
 public class EssentialsStore{
     // Declaring class level variables
+    public static double itemCost;
+    public static double amountPaid;
     public static double amount;
+    public static double change;
     public static int remainingAmount;
     public static char ghs = '\u20B5';
 
@@ -21,9 +24,14 @@ public class EssentialsStore{
         // Welcoming the user to the program
         System.out.println("Welcome to Essentials Store!");
 
-        // Prompting the user to enter the amount spent
-        System.out.print("Enter an amount (e.g., " + ghs + "12.99):  " + ghs);
-        amount = scanner.nextDouble();
+        // Prompting the user to enter the cost of items 
+        System.out.printf("Enter the total cost of items %c", ghs);
+        itemCost = scanner.nextDouble();
+        // Prompting the user to enter the amount paid
+        System.out.printf("Enter the amount you paid %c", ghs);
+        amountPaid = scanner.nextDouble();
+        
+        amount = amountPaid - itemCost;
 
         // Calling the Change Breakdown method
         computeChangeBreakdown(amount);
@@ -37,8 +45,8 @@ public class EssentialsStore{
         System.out.println("**************************");
         System.out.println("RECEIPT");
         System.out.println("**************************");
-        System.out.println(String.format("Total \t \t " + ghs + "%.2f", amount));
-        System.out.println(String.format("Change \t \t " + ghs + "%.2f", (double) remainingAmount));
+        System.out.printf("Total %-5s %10s %n", ghs, itemCost);    // Fix this part later
+        System.out.println(String.format("Change \t \t " + ghs + "%.2f", amount));
         System.out.println("**************************");
 
     }
@@ -48,6 +56,7 @@ public class EssentialsStore{
     public static void computeChangeBreakdown (double amount) {
         // Breaking down the amount spent by the user
         remainingAmount = (int)(amount * 100);
+        
 
         // Denominations: 100, 50, 20, 10, 5, 2, 1
         
@@ -100,7 +109,7 @@ public class EssentialsStore{
 
 
         // Display results to the user
-        System.out.println("Your total change is: ");
+        System.out.println("\nYour total change is: ");
         if (hundredCediNotes != 0) {
         System.out.println(hundredCediNotes + " " + ghs + "100 Cedi Note");
         }
