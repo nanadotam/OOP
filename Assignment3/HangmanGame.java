@@ -82,9 +82,5 @@ public class HangmanGame {
             System.out.println("Congratulations! You won! The word was " + word);
         }
 
-        // if (isWordGuessed) {
-        //     System.out.println("You already guessed that letter. ");
-        // }
-    }
 }
 
